@@ -87,7 +87,7 @@ export const login = async (req, res, next) => {
 
         // save user token
       
-        return res.status(200).json(successRes("login successful", { data: existingUser, token }));
+        return res.status(200).json({ data: existingUser, token });
     }
     return res.status(400).json(errorRes("Invalid Creditionals"));
 }
