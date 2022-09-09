@@ -4,7 +4,6 @@ import dotenv from 'dotenv'
 import userRouter from './routes/userRoutes.js'
 import imageRouter from './routes/imageRoutes.js'
 import cors from "cors";
-import uploadRouter from './routes/uploadRoutes.js'
 import multer from 'multer'
 import ImageModel from './model/images.js'
 
@@ -17,7 +16,6 @@ app.use(cors());
 
 app.use('/user', userRouter)
 app.use('/images', imageRouter)
-app.use('/fileupload', uploadRouter)
 
 
 
