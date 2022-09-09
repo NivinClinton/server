@@ -5,7 +5,6 @@ import images from "../model/images.js";
 import ImageModel from '../model/images.js'
 
 export const addImage = async (req, res, next) => {
- const {user} = req.body
   let existingUser;
   let newImage;
   const fileStorageEngine = await multer.diskStorage({
@@ -20,7 +19,7 @@ export const addImage = async (req, res, next) => {
   
 
   try {
-    existingUser = await designCrewUser.findById(user);
+    existingUser = await designCrewUser.findById(req.params.id);
 
   } catch (err) {
     return console.log(err);
@@ -36,7 +35,7 @@ export const addImage = async (req, res, next) => {
       newImage = new ImageModel({
 
         title: req.body.title,
-        user: req.body.user,
+        user: req.params.id,
         image: {
           data: req.file.filename,
           contentType: 'image/png'

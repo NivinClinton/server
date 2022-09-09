@@ -3,7 +3,7 @@ import express from 'express'
 
 const imageRouter = express.Router()
 
-imageRouter.post('/addimage', addImage)
+imageRouter.post('/addimage/:id', addImage)
 imageRouter.get('/', getAllimages)
 imageRouter.put("/update/:id",updateImage);
 imageRouter.delete("/delete/:id",deleteImage);
