@@ -7,12 +7,12 @@ const imageSchema = new Schema({
     required: true,
   },
   image: {
-    type: String,
-    required: true,
+    data: Buffer,
+    contentType: String,
   },
   user: {
     type: mongoose.Types.ObjectId,
-    ref :"DesignCrewUser",
+    ref : "DesignCrewUser",
     required: true,
   },
 });
